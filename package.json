@@ -1,6 +1,7 @@
 {
   "name": "opb-todo",
   "version": "0.1.0",
+  "description": "Простое приложение отправки задач программистам. Приложение только для ОПБ №3",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
@@ -34,5 +35,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "author": {
+    "name": "Omar Nurmakhanov",
+    "email": "omarionurmsad@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SonOfStep/opb-todo"
   }
 }
