@@ -1,0 +1,57 @@
+.todo{
+    display: flex;
+    align-items: center;
+
+    flex-wrap: wrap;
+    
+    margin: 0.5rem 1rem;
+    padding: 0.25rem .5rem;
+
+    border: 3px solid #fff;
+    border-radius: 1rem;
+}
+
+.todo__completed{
+    display: flex;
+    justify-content: center;
+    flex: 1 1 1rem;
+}
+.todo__index{
+    display: flex;
+    justify-content: center;
+
+    flex: 1 1 1rem;
+}
+.todo__text{
+    flex: 9 1 300px;
+    text-align: justify;
+}
+.todo.done .todo__text{
+    text-decoration: line-through;
+}
+.todo__remove{
+    display: flex;
+    justify-content: center;
+
+    flex: 1 1 30px;
+
+    max-width: 30px;
+    height: 30px;
+}
+.todo__btn-remove{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #f00;
+    color: #fff;
+
+    border: 3px solid #ddd;
+    border-radius: 50%;
+
+    height: 100%;
+    width: 100%;
+}
+.todo__btn-remove:hover{
+    border: 3px solid #aaa;
+}
