@@ -1,0 +1,32 @@
+.form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+.form__input{
+    resize: none;
+    flex: 11 1 300px;
+
+    margin: 0.5rem 1rem;
+    padding: 0.25rem .5rem;
+}
+.form__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex: 1 1 40px;
+
+    max-width: 40px;
+    height: 40px;
+
+    background-color: #00f;
+    color: #fff;
+    border: 3px solid #ddd;
+    border-radius: 50%;
+
+    font-weight: bold;
+    font-size: 1.75rem;
+}
