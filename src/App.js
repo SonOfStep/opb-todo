@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useReducer } from 'react';
-import Context from './Context'
+import Context from './actions/Context'
 import './App.css';
 import TodoList from './components/TodoList';
 import reducer from './reducer';
@@ -17,31 +17,31 @@ function App() {
 
   const [state, dispatch] = useReducer(reducer, JSON.parse(localStorage.getItem("todos")) || todos)
 
-  useEffect( () => {
+  useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(state))
-  }, [state] )
+  }, [state])
 
-  const actions = useMemo( () => ({
+  const actions = useMemo(() => ({
     addTodo: text => {
       dispatch({ type: "ADD-TODO", payload: text })
     },
-    toggleComplete: ( id, completed ) => {
-      dispatch({type: "TOGGLE-COMPLETE", payload: {id, completed}})
+    toggleComplete: (id, completed) => {
+      dispatch({ type: "TOGGLE-COMPLETE", payload: { id, completed } })
     },
     remove: id => {
       dispatch({ type: "REMOVE-TODO", payload: id })
     }
   }), [])
 
-  useEffect( () => {
-    console.log(state)
-  }, [state] )
-
   return (
     <Context.Provider value={{ actions }}>
       <div className="wrapper">
-        <TodoCreate />
-        { state.length ? <TodoList todos={ state } /> : <p>Нет задач</p> }
+        <div className="container" >
+
+          <TodoCreate />
+          {state.length ? <TodoList todos={state} /> : <p>Нет задач</p>}
+
+        </div>
       </div>
     </Context.Provider>
   );

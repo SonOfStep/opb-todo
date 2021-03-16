@@ -1,34 +1,33 @@
 import { useContext } from "react"
-import Context from "../Context"
+import Context from "../actions/Context"
 import PropTypes from "prop-types"
-import "./TodoItem.css"
 
 const TodoItem = ({ todo, index }) => {
 
     const { actions } = useContext(Context)
     const classes = ["todo"]
 
-    if (todo.completed){
+    if (todo.completed) {
         classes.push("done")
     }
 
-    return(
+    return (
         <li className={classes.join(' ')} >
-            <span className="todo__completed">
-                <input 
-                    type="checkbox" 
-                    checked={ todo.completed }
-                    onChange={ () => { actions.toggleComplete(todo.id, todo.completed) } }
-                />
-            </span>
-            <span className="todo__index" >{ index }</span>
-            <span className="todo__text" >{ todo.text }</span>
-            <span className="todo__remove" >
-                <button 
-                    className="todo__btn-remove" 
-                    onClick={ () => { actions.remove(todo.id) } }
+            <input
+                id={"checkTodo-" + todo.id}
+                type="checkbox"
+                className="todo__completed"
+                checked={todo.completed}
+                onChange={() => { actions.toggleComplete(todo.id, todo.completed) }}
+            />
+            <label htmlFor={"checkTodo-" + todo.id}>
+                <span className="todo__index" >{index}</span>
+                <span className="todo__text" >{todo.text}</span>
+                <button
+                    className="btn todo__btn"
+                    onClick={() => { actions.remove(todo.id) }}
                 >&#10006;</button>
-            </span>
+            </label>
         </li>
     )
 }

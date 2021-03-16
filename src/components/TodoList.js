@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import TodoItem from "./TodoItem"
-import "./TodoList.css"
 
 const TodoList = ({ todos }) => {
     return (
